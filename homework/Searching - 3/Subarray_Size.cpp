@@ -17,17 +17,17 @@ int subarraySum(const vector<int>& A, int X) {
 }
 
 int findMaxX(const vector<int>& A, int S) {
-    int left = 1, right = A.size(), result = 0;
-    while(left <= right) {
-        int mid = left + (right - left) / 2;
+    int low= 1, high= A.size(), ans = 0;
+    while(low <= high) {
+        int mid = low + (high - low) / 2;
         if(subarraySum(A, mid) <= S) {
-            result = mid;
-            left = mid + 1;
+            ans = mid;
+            low = mid + 1;
         } else {
-            right = mid - 1;
+            high = mid - 1;
         }
     }
-    return result;
+    return ans;
 }
 
 int main() {
