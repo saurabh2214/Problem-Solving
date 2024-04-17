@@ -4,6 +4,14 @@ using namespace std;
 struct TriesNode{
         int LessLengthIndex=0;
         TriesNode* children[26];
+        TriesNode(int index)
+        {
+            for(int i=0;i<26;i++)
+            {
+                children[i]=NULL;
+            }
+            LessLengthIndex=index;
+        }
 };
 void insert(TriesNode*root,int i,vector<string>& wordsContainer)
 {
