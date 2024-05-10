@@ -15,7 +15,7 @@ int jmpRecon(int index, vector<int>& nums, vector<int> &dp)
     int jmp=1e9;
     for(int i=1;i<=nums[index];i++)
     {
-        jmp=min(jmp,1+f(index+i,nums,dp));
+        jmp=min(jmp,1+jmpRecon(index+i,nums,dp));
     }
     return dp[index]=jmp;
 }
